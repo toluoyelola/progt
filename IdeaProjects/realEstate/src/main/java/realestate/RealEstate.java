@@ -3,7 +3,7 @@ package realestate;
 public class RealEstate implements realEstateInterface, Comparable<RealEstate> {// implement comparable
 
         String city;
-        double price;
+        public double price;
         int sqm;
         double numberOfRooms;
         Genre genre;
