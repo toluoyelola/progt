@@ -5,10 +5,10 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-public class realEstateAgent {
-    static TreeSet<realEstate> stock = new TreeSet<>();
+public class RealEstateAgent {
+    public TreeSet<RealEstate> stock = new TreeSet<>();// need to compare method cause of treeset
 
-    realEstateAgent() {
+    RealEstateAgent() {
         loadPropertiesFromFile();
     }
 
@@ -47,7 +47,7 @@ public class realEstateAgent {
 
     private void processRealEstate(String[] pieces) {
         Genre genre = parseGenre(pieces[5]);
-        stock.add(new realEstate(
+        stock.add(new RealEstate(
                 pieces[1],
                 Double.parseDouble(pieces[2]),
                 Integer.parseInt(pieces[3]),
@@ -60,8 +60,8 @@ public class realEstateAgent {
         Genre genre = parseGenre(pieces[5]);
         boolean isInsulated = pieces[6].equals("yes");
 
-        stock.add(new panel(
-                pieces[1],
+        stock.add(new panel
+                (pieces[1],
                 Double.parseDouble(pieces[2]),
                 Integer.parseInt(pieces[3]),
                 Double.parseDouble(pieces[4]),

@@ -1,6 +1,6 @@
 package realestate;
 
-public class panel extends realEstate {
+public class panel extends RealEstate {
     // New fields
     private int floor;
     private boolean isInsulated;
@@ -53,7 +53,7 @@ public class panel extends realEstate {
     }
 
     // PanelInterface method
-    public boolean hasSameAmount(realEstate other) {
+    public boolean hasSameAmount(RealEstate other) {
         return this.getTotalPrice() == other.getTotalPrice();
     }
 

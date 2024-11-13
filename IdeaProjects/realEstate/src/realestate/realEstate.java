@@ -1,6 +1,6 @@
 package realestate;
 
-public class realEstate implements realEstateInterface {
+public class RealEstate implements realEstateInterface, Comparable<RealEstate> {// implement comparable
 
         String city;
         double price;
@@ -10,7 +10,7 @@ public class realEstate implements realEstateInterface {
 
 
 
-        public realEstate(String city, double price, int sqm, double numberOfRooms, Genre genre){
+        public RealEstate(String city, double price, int sqm, double numberOfRooms, Genre genre){
             this.city = city;
             this.price = price;
             this.sqm = sqm;
@@ -18,7 +18,7 @@ public class realEstate implements realEstateInterface {
             this.genre = genre;
         }
 
-    public realEstate(){
+    public RealEstate(){
 
     }
 
@@ -54,6 +54,18 @@ public class realEstate implements realEstateInterface {
                 "\nNumber of rooms: " + numberOfRooms +
                 "\nTotal price: " + getTotalPrice() +
                 "\nAverage sqm per room: " + averageSqmPerRoom();
+
+    }
+
+    @Override
+    public int compareTo(RealEstate o) {
+        if (price < o.price) return -1;
+        else if (price > o.price) return 1;
+        else if (sqm < o.sqm) return -1;
+        else if (sqm > o.sqm) return 1;
+        else if (numberOfRooms < o.numberOfRooms) return -1;
+        else if (numberOfRooms > o.numberOfRooms) return 1;
+        else return 0;
     }
 }
 
